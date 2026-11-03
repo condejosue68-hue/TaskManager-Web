@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskManager Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="contenedor">
+        <header>
+            <h1>TaskManager Web</h1>
+            <p>Organiza tus actividades y mantén el control de tus tareas.</p>
+        </header>
+
+        <section class="formulario">
+            <h2>Agregar nueva tarea</h2>
+
+            <form id="formTarea">
+                <input
+                    type="text"
+                    id="inputTarea"
+                    placeholder="Escribe una tarea..."
+                    required
+                >
+
+                <button type="submit">Agregar tarea</button>
+            </form>
+        </section>
+
+        <section class="lista-tareas">
+            <h2>Mis tareas</h2>
+
+            <ul id="listaTareas">
+                <!-- Aquí aparecerán las tareas -->
+            </ul>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
