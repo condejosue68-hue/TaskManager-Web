@@ -1,0 +1,72 @@
+
+const formTarea = document.getElementById("formTarea");
+const inputTarea = document.getElementById("inputTarea");
+const listaTareas = document.getElementById("listaTareas");
+
+let totalTareas = 0;
+let tareasCompletadas = 0;
+
+formTarea.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const texto = inputTarea.value.trim();
+
+    if (texto === "") {
+        alert("Escribe una tarea antes de agregarla.");
+        return;
+    }
+
+    const tarea = document.createElement("li");
+    const nombre = document.createElement("span");
+
+    nombre.textContent = texto;
+
+    const botonCompletar = document.createElement("button");
+    botonCompletar.textContent = "Completar";
+
+    const botonEliminar = document.createElement("button");
+    botonEliminar.textContent = "Eliminar";
+
+    botonCompletar.addEventListener("click", function() {
+        const completada = tarea.classList.toggle("completada");
+
+        if (completada) {
+            botonCompletar.textContent = "Pendiente";
+            tareasCompletadas++;
+        } else {
+            botonCompletar.textContent = "Completar";
+            tareasCompletadas--;
+        }
+
+        actualizarContadores();
+    });
+
+    botonEliminar.addEventListener("click", function() {
+        if (tarea.classList.contains("completada")) {
+            tareasCompletadas--;
+        }
+
+        totalTareas--;
+        tarea.remove();
+
+        actualizarContadores();
+    });
+
+    tarea.appendChild(nombre);
+    tarea.appendChild(botonCompletar);
+    tarea.appendChild(botonEliminar);
+
+    listaTareas.appendChild(tarea);
+
+    totalTareas++;
+    inputTarea.value = "";
+
+    actualizarContadores();
+});
+
+function actualizarContadores() {
+    document.getElementById("totalTareas").textContent = totalTareas;
+    document.getElementById("tareasCompletadas").textContent = tareasCompletadas;
+    document.getElementById("tareasPendientes").textContent =
+        totalTareas - tareasCompletadas;
+}
