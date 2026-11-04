@@ -10,6 +10,7 @@ Desarrollar una aplicación web funcional aplicando conocimientos de HTML, CSS, 
 ## Integrantes
 - Josue Conde: desarrollo de interfaz HTML, estilos CSS e integración del proyecto.
 - Luisito Pollos: desarrollo de funcionalidades JavaScript y revisión de código.
+-Aaron pacheco: desarrollo de markdown
 
 ## Tecnologías utilizadas
 - HTML5
